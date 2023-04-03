@@ -2,9 +2,7 @@ import React from "react";
 import { Products } from "@/types/product";
 
 async function getProduct(productId: string): Promise<Products> {
-	const res = await fetch(
-		`https://modernfydesign-api.onrender.com/api/products/${productId}`
-	);
+	const res = await fetch(`${process.env.REACT_APP_TEST_API}/${productId}`);
 	const data = await res.json();
 
 	return data;

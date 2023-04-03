@@ -3,9 +3,7 @@ import { Products } from "@/types/product";
 import Link from "next/link";
 
 async function getProducts(): Promise<Products[]> {
-	const res = await fetch(
-		"https://modernfydesign-api.onrender.com/api/products"
-	);
+	const res = await fetch(`${process.env.REACT_APP_TEST_API}`);
 	const data = await res.json();
 
 	return data;
